@@ -22,16 +22,34 @@
     // 🧠 The function buildPeter builds an object of a certain shape and returns it.
     // 🧠 Example of usage:
     // buildPeter() // should return { firstName: "Peter", lastName: "Pan", age: 12 }
-    function buildPeter() {
+    // function buildPeter(firstName, lastName, age) {
+    //   let peter = {}
+    //   peter.firstName = firstName;
+    //   peter.lastName = lastName;
+    //   peter.age = age;
+    //   return peter;
+    // }
 
+    function buildPeter() {
+      let peter = {}
+      peter.firstName = "Peter";
+      peter.lastName = "Pan";
+      peter.age = 12;
+
+      return peter;
     }
+
 
     // 👉 CHALLENGE 2
     // 🧠 The function buildUser takes three arguments and uses them to build an object and return it.
     // 🧠 Example of usage:
     // buildUser("John", "Smith", 30) // should return { firstName: "John", lastName: "Smith", age: 30 }
     function buildUser(firstName, lastName, age) {
-
+      let user = {}
+      user.firstName = firstName;
+      user.lastName = lastName;
+      user.age = age;
+      return user
     }
 
     // 👉 CHALLENGE 3
@@ -42,9 +60,22 @@
     // 🧠 Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    function deletePrice() {
+    function deletePrice(obj) {
+      for (key in obj) {
 
+        if (key === "price") {
+          delete obj[key];
+          return obj;
+        }
+      }
+
+      obj.priceless = true;
+      return obj;
     }
+
+
+
+
 
     // 👉 CHALLENGE 4
     // 🧠 The function evenList takes an array as its argument and returns true if the array has an even number of elements, false otherwise.
@@ -53,6 +84,11 @@
     // evenList(['a']) // should return false
     // evenList(['a', 'b']) // should return true
     function evenList(arr) {
+      if (arr.length % 2 === 0) {
+        return true
+      } else if (arr.length % 2 !== 0) {
+        return false
+      }
 
     }
 
